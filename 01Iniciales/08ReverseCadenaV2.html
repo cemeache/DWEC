@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Palíndromo</title>
+</head>
+<body>
+    <script>
+        let cadena = prompt("Cadena: ");
+        
+        invr = invertirCadena(cadena);
+
+        if(comprobarPalindromo(cadena,invr)){
+            console.log("Es palíndromo");
+        }else{
+            console.log("No es palíndromo");
+        }
+
+        function invertirCadena(cadena){
+            return cadena.split("").reverse().join(""); //.split --> cadena a array || .reverse --> array al revés || .join --> array a cadena
+        }
+
+        function comprobarPalindromo(cadena,invr){
+            return cadena === invr;
+        }
+    </script>
+</body>
+</html>

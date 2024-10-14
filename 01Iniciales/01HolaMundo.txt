@@ -1,0 +1,5 @@
+Ejercicio 1: "Hola, Mundo"
+Objetivo: Familiarizarse con la sintaxis básica de JavaScript y el uso de console.log.
+1. Instrucción: Crea un programa que imprima "Hola, Mundo" en la consola.
+2. Extra: Modifica el programa para que, en vez de "Hola, Mundo", muestre un saludo
+personalizado usando una variable, por ejemplo: "Hola 2DAW".

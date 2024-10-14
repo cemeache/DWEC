@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora Edad</title>
+</head>
+<body>
+    <script>
+        let aaaa = prompt("Año Nacimiento: ","");
+        aaaa = parseInt(aaaa);
+    
+        let fecha = new Date();  
+    
+        if(aaaa > parseInt(fecha.getFullYear()))
+            console.log("ERROR | Valor Inválido");
+        else
+            console.log(fecha.getFullYear() - aaaa);
+                
+    </script>
+</body>
+</html>

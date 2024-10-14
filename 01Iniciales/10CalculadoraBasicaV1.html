@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>FizzBuzz</title>
+</head>
+<body>
+    <script>
+        let n1 = parseInt(prompt("Operador 1: "));
+        let sig = prompt("Operación: ");
+        let n2 = parseInt(prompt("Operador 2: "));
+
+        console.log(calculadora(n1,n2,sig));
+
+        function calculadora(n1,n2,sig){
+            switch(sig){
+                case '+':
+                    return n1+n2;
+                    break;
+                case '-':
+                    return n1-n2;
+                    break;
+                case '*':
+                    return n1*n2;
+                    break;
+                case '/':
+                    return n1/n2;
+                    break;
+                default:
+                    return "ERROR";
+            }
+        }
+    </script>
+</body>
+</html>

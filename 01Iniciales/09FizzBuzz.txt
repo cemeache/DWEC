@@ -1,0 +1,7 @@
+Ejercicio 9: FizzBuzz
+Objetivo: Practicar con condicionales y bucles.
+1. Instrucción: Escribe un programa que muestre los números del 1 al 50. Para los
+múltiplos de 3, muestra "Fizz" en lugar del número; para los múltiplos de 5, muestra
+"Buzz"; y para los múltiplos de ambos (3 y 5), muestra "FizzBuzz".
+
+2. Extra: Permite al usuario definir el rango en el que desea ejecutar el programa.

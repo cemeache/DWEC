@@ -1,0 +1,6 @@
+Ejercicio 3: Número par o impar
+Objetivo: Practicar con estructuras condicionales (if).
+1. Instrucción: Crea un programa que pida al usuario un número y muestre si el
+número es par o impar.
+2. Extra: Muestra un mensaje de error si el usuario introduce algo que no es un
+número.

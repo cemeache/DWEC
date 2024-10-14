@@ -1,0 +1,6 @@
+Ejercicio 10: Calculadora básica con funciones
+Objetivo: Introducir el concepto de funciones.
+1. Instrucción: Escribe una función calculadora que tome tres parámetros: dos
+números y una operación (+, -, *, /). La función debe devolver el resultado de
+aplicar la operación a los dos números.
+2. Extra: Muestra un mensaje de error si la operación introducida no es válida.

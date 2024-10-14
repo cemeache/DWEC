@@ -1,0 +1,5 @@
+Ejercicio 4: Calculadora de edad
+Objetivo: Trabajar con operaciones básicas y mostrar resultados basados en condiciones.
+1. Instrucción: Crea un programa que pida al usuario su año de nacimiento y calcule
+su edad actual.
+2. Extra: Si el usuario introduce un año mayor al actual, muestra un mensaje de error.

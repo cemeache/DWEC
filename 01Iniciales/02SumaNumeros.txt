@@ -1,0 +1,6 @@
+Ejercicio 2: Suma de dos números
+Objetivo: Trabajar con variables y operadores aritméticos básicos.
+1. Instrucción: Crea un programa que pida al usuario dos números (usa prompt) y
+muestre la suma de ambos en la consola.
+2. Extra: Modifica el programa para que realice otras operaciones (resta, multiplicación
+y división).

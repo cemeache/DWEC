@@ -1,0 +1,7 @@
+Ejercicio 7: Número mayor de un array
+Objetivo: Trabajar con arrays y métodos para encontrar valores. (función max y
+toLowerCase)
+1. Instrucción: Crea un array de números y escribe una función que encuentre y
+devuelva el número más alto del array.
+2. Extra: Pide al usuario que introduzca números y añádelos a un array vacío hasta
+que el usuario escriba "stop". Luego, muestra el número mayor del array.

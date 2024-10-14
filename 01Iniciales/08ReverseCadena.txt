@@ -1,0 +1,6 @@
+Ejercicio 8: Reversa de una cadena
+Objetivo: Practicar con manipulación de strings.
+1. Instrucción: Escribe una función que reciba una cadena de texto y devuelva la
+cadena invertida (ej., "hola" => "aloh").
+2. Extra: Verifica si la cadena es un palíndromo (es decir, si se lee igual de izquierda a
+derecha y de derecha a izquierda).
