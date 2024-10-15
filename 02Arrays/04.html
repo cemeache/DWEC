@@ -1,0 +1,31 @@
+<!-- Realizar un programa que pida la carga de dos vectores numéricos. Obtener la
+suma de los dos vectores, dicho resultado guardarlo en un tercer vector del
+mismo tamaño. Sumar componente a componente. -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Ejercicio 3</title>
+    </head>
+    <body>
+        <script>
+            vector1 = new Array;
+            vector2 = new Array;
+            vector3 = new Array;
+
+            for(i=0;i<3;i++)
+                vector1[i] = parseInt(prompt("Vector1: ",""));
+
+            for(i=0;i<3;i++)
+                vector2[i] = parseInt(prompt("Vector2: ",""));
+
+            for(i=0;i<3;i++)
+                vector3[i] = vector1[i] + vector2[i];
+
+            for(i=0;i<3;i++)
+                console.log(i,  '--> ',vector3[i]);
+
+        </script>
+    </body>
+</html>

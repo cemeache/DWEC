@@ -1,0 +1,55 @@
+<!-- 9. Realizar el siguiente ejercicio utilizando Arrays asociativo.
+En un banco se procesan datos de las cuentas corrientes de sus clientes. De cada cuenta
+corriente se conoce: número de cuenta, nombre del cliente y saldo actual. El ingreso de
+datos debe finalizar al ingresar un valor negativo en el número de cuenta.
+Se pide confeccionar un programa que lea los datos de las cuentas corrientes e informe:
+
+a) De cada cuenta: número de cuenta, nombre del cliente y estado de la cuenta
+según su saldo, sabiendo que:
+Estado de la cuenta 'Acreedor' si el saldo es >0.
+'Deudor' si el saldo es <0.
+'Nulo' si el saldo es =0.
+
+b) La suma total de los saldos acreedores. -->
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Ejercicio 9</title>
+    </head>
+    <body>
+        <script>
+            let cuenta = [];
+            let i = 0;
+
+            /*INTRODUCIR*/
+            do{
+                cuenta[i] = {}; // Inicializar un objeto vacío
+                cuenta[i]["num"] = parseInt(prompt("Número Cuenta: "));
+                cuenta[i]["nom"] = prompt("Nombre Titular: ");
+                cuenta[i]["sal"] = parseFloat(prompt("Saldo Actual: "));
+                console.log(cuenta[i]);
+                i++;
+            }while(cuenta[i-1]["num"]>0);
+
+            /*VISUALIZAR*/
+            let sumAcreedores = 0;
+
+            for(i=0;i<cuenta.length;i++){
+                if(cuenta[i]["sal"]>0){
+                    estado = "Acreedor";
+                    sumAcreedores+=cuenta[i]["sal"];
+                }else
+                    if(cuenta[i]["sal"]==0)
+                        estado = "Nulo";
+                    else
+                    estado = "Deudor";
+                console.log(`Cuenta Número: ${cuenta[i]["num"]}, Nombre: ${cuenta[i]["nom"]}, Saldo: ${cuenta[i]["sal"]}, Estado: ${estado}`);
+            }
+
+            console.log("Suma Total Acreedores: ",sumAcreedores);
+        </script>
+    </body>
+</html>

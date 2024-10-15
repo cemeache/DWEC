@@ -1,0 +1,25 @@
+<!-- Escribir un programa que lea 10 notas de alumnos y nos informe cuántos tienen
+notas mayores o iguales a 7 y cuántos menores. -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Ejercicio 1</title>
+    </head>
+    <body>
+        <script>
+            let notas = [7,4,8,2,4,7,10,2,8,10];
+            let nmy=0,nmn=0;
+            for(i=0;i<10;i++)
+                if(notas[i]>=7)
+                    nmy++;
+                else
+                    nmn++;
+
+            console.log("Mayor a 7 o igual: ",nmy);
+            console.log("Menor a 7: ",nmn);
+
+        </script>
+    </body>
+</html>

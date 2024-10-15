@@ -1,0 +1,24 @@
+<!-- Se ingresan un conjunto de 5 alturas de personas por teclado. Mostrar la altura
+promedio de las personas. -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Ejercicio 3</title>
+    </head>
+    <body>
+        <script>
+            let alturas = new Array;
+
+            for(i=0;i<5;i++)
+                alturas[i] = parseFloat(prompt("Altura: ",""));
+
+            let s=0;
+            for(i=0;i<5;i++)
+                s+=alturas[i];
+            console.log("La media es de ",s/5);
+
+        </script>
+    </body>
+</html>

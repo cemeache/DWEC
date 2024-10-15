@@ -1,0 +1,32 @@
+<!-- En una empresa trabajan 5 empleados cuyos sueldos oscilan entre $100 y $500,
+realizar un programa que lea los sueldos que cobra cada empleado e informe
+cuántos empleados cobran entre $100 y $300 y cuántos cobran más de $300.
+Además el programa deberá informar el importe que gasta la empresa en sueldos
+al personal. -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Ejercicio 5</title>
+    </head>
+    <body>
+        <script>
+            let sueldos = [499,342,132,456,111];
+            let s=0,c100v300=0,c300=0;
+
+            for(i=0;i<8;i++){
+                if(sueldos[i]>100 && sueldos[i]<300)
+                    c100v300++;
+                if(sueldos[i]>300)
+                    c300++;
+                s+=sueldos[i];
+            }
+
+            console.log("Sueldos: ",sueldos);
+            console.log("100-300: ",c100v300);
+            console.log("+300: ",c300);
+
+        </script>
+    </body>
+</html>
