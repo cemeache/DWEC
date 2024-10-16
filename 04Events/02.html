@@ -1,0 +1,31 @@
+<!-- 2. (Eventos onFocus y onBlur). Solicitar que se introduzca el nombre y la
+clave de un usuario. Mostrar una ventana de alerta si en la clave se
+introducen menos de 7 caracteres o más de 20.-->
+
+<!-- onBluer -> Llamar a una función cuando un usuario abandona un campo de entrada -->
+<!-- onFocus -> Llamar a una función cuando un campo de entrada obtiene el foco-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>onFocus | onBlur</title>
+    </head>
+    <body>
+        <form action=""> 
+            <label>Nombre: </label>
+            <input type="text" onblur="">
+            <label>Clave: </label>
+            <input type="password" id="password" onblur="lenghtPass()">
+        </form>
+    </body>
+    <script>
+        function lenghtPass (){
+            let cadena = document.getElementById("password");
+            let valorCadena = cadena.value;
+
+            if (valorCadena.split("").length<7 || valorCadena.split("").length>20)
+                console.log("Contraseña con longitud incorrecta");
+        }
+    </script>
+</html>
