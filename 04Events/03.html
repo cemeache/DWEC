@@ -1,0 +1,29 @@
+<!-- (Eventos onMouseOver y onMouseOut). Realizar una función JavaScript en
+la cual aparezca tres etiquetas Rojo, Verde y Azul, de forma que
+cuando coloquemos el ratón sobre una de las palabras, todo el fondo
+se ponga de ese color y cuando pierda el foco, el fondo vuelva a
+blanco. -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>onMouseOver | onMouseOut</title>
+    </head>
+    <body>
+        <div id="red" onmouseover="colorBackground('red')" onmouseout="reset('red')"><p>ROJO</p></div>
+        <div id="green" onmouseover="colorBackground('green')" onmouseout="reset('green')"><p >VERDE</p></div>
+        <div id="blue" onmouseover="colorBackground('blue')" onmouseout="reset('blue')"><p >AZUL</p></div>
+        <script>
+            function colorBackground(color){
+                let etiqueta = document.getElementById(color);
+                etiqueta.style.backgroundColor = color;
+            }
+
+            function reset(color){
+                let etiqueta = document.getElementById(color);
+                etiqueta.style.backgroundColor = "#fff";
+            }
+        </script>
+    </body>
+</html>
