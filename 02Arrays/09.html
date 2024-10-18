@@ -25,14 +25,15 @@ b) La suma total de los saldos acreedores. -->
             let i = 0;
 
             /*INTRODUCIR*/
-            do{
+            let numCuenta = parseInt(prompt("Número de cuenta"));
+            for(i=0;numCuenta>0;i++){
                 cuenta[i] = {}; // Inicializar un objeto vacío
-                cuenta[i]["num"] = parseInt(prompt("Número Cuenta: "));
+                cuenta[i]["num"] = numCuenta;
                 cuenta[i]["nom"] = prompt("Nombre Titular: ");
                 cuenta[i]["sal"] = parseFloat(prompt("Saldo Actual: "));
                 console.log(cuenta[i]);
-                i++;
-            }while(cuenta[i-1]["num"]>0);
+                numCuenta = parseInt(prompt("Número de cuenta"));
+            }
 
             /*VISUALIZAR*/
             let sumAcreedores = 0;
