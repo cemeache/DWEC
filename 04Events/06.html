@@ -1,0 +1,55 @@
+<!-- 6. (Eventos: click y dblclick). Crear un formulario con tres botones con las
+leyendas "1", "2" y "3". Mostrar un mensaje indicando qué botón se
+presionó. -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <h1>Formulario</h1>
+        <p id="mensaje"></p>
+
+        <!-- Botones -->
+        <button id="1">1</button>
+        <button id="2">2</button>
+        <button id="3">3</button>
+
+        <script> 
+            function mostrarMensaje(mensaje){
+                document.getElementById('mensaje').innerText = mensaje;
+            }
+
+            const btn1 = document.getElementById('1');
+            const btn2 = document.getElementById('2');
+            const btn3 = document.getElementById('3');
+
+            btn1.addEventListener('click', function() {
+                mostrarMensaje('Se presionó el botón 1 [Click]');
+            });
+
+            btn1.addEventListener('dblclick', function() {
+                mostrarMensaje('Se presionó el botón 1 [Click x2]');
+            });
+
+            btn2.addEventListener('click', function() {
+                mostrarMensaje('Se presionó el botón 2 [Click]');
+            });
+
+            btn2.addEventListener('dblclick', function() {
+                mostrarMensaje('Se presionó el botón 2 [Click x2]');
+            });
+
+            btn3.addEventListener('click', function() {
+                mostrarMensaje('Se presionó el botón 3 [Click]');
+            });
+
+            btn3.addEventListener('dblclick', function() {
+                mostrarMensaje('Se presionó el botón 3 [Click x2]');
+            });
+
+        </script>
+    </body>
+</html>
