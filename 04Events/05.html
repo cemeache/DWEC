@@ -12,7 +12,17 @@ año de la fecha actual.-->
         <button onclick="fechaAct()"></button>
         <script>
             function fechaAct(){
-                window.open(_blank)
+                let objDate = new Date();
+                
+                const diaSem = ["Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"];
+                const meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+
+
+                const fecha = `Hoy es ${diaSem[objDate.getDay()]} ${objDate.getDate()} de ${meses[objDate.getMonth()]} de ${objDate.getFullYear()}`;
+
+
+                const newWindows = window.open("","_blank","width=400","height=500");
+                newWindows.document.write(`<h1>${fecha}</h1>`)
             }
         </script>
     </body>
