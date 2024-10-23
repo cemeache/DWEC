@@ -32,14 +32,14 @@ let dataEmpleados = `12345,Javier Arias Carroza,45,Masculino,Gerente
 11234,Maria Vidigal Barroso,30,Femenino,Contadora`;
 
 let personas = dataEmpleados.split('\n');
-console.log(personas);
+/*console.log(personas);*/
 
 let datosPersona = new Array();
 
 for(i=0;i < personas.length;i++)
     datosPersona[i] = personas[i].split(',');
 
-console.log(datosPersona);
+/*console.log(datosPersona);*/
 
 for(i=0;i<datosPersona.length;i++){
     let datosEmpleado = {
@@ -53,3 +53,11 @@ for(i=0;i<datosPersona.length;i++){
 }
 
 console.log(empleado);
+
+/*Crear una función para buscar un empleado por el número de documento.
+Implementar una función que nos permita buscar un empleado por su número de
+documento dentro del array y nos devuelva toda la información asociada a este.*/
+
+function buscarId (){
+    
+}
