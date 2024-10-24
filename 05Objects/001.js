@@ -8,8 +8,6 @@ trim --> espacios out
 split --> separar ','
 */
 
-let empleado = [];
-
 let dataEmpleados = `12345,Javier Arias Carroza,45,Masculino,Gerente
 67890,Pablo Caldito Gomez,33,Masculino,Desarrollador
 11223,Levi Josue Candeias de Figueiredo,29,Masculino,Analista
@@ -31,23 +29,35 @@ let dataEmpleados = `12345,Javier Arias Carroza,45,Masculino,Gerente
 66112,Joaquin Francisco Telo Nuñez,52,Masculino,Director Financiero
 11234,Maria Vidigal Barroso,30,Femenino,Contadora`;
 
-let personas = dataEmpleados.split('\n');
+/*Array con los datos de empleados*/
+let empleado = [];
 
-let datosPersona = new Array();
+/*Funcion para cargar datos*/
+function cargarDatos(empleado,dataEmpleados){
+    let personas = dataEmpleados.split('\n');
+    let datosPersona = new Array();
 
-for(i=0;i < personas.length;i++)
-    datosPersona[i] = personas[i].split(',');
+    for(i=0;i < personas.length;i++)
+        datosPersona[i] = personas[i].split(',');
 
+    for(i=0;i<datosPersona.length;i++){
+        let datosEmpleado = {
+            id: datosPersona[i][0],
+            nombre: datosPersona[i][1],
+            edad: datosPersona[i][2],
+            sexo: datosPersona[i][3],
+            puesto: datosPersona[i][4],
+        };
+        empleado.push(datosEmpleado);
+    }
+}
 
-for(i=0;i<datosPersona.length;i++){
-    let datosEmpleado = {
-        id: datosPersona[i][0],
-        nombre: datosPersona[i][1],
-        edad: datosPersona[i][2],
-        sexo: datosPersona[i][3],
-        puesto: datosPersona[i][4],
-    };
-    empleado.push(datosEmpleado);
+/*Mostrar datos*/
+function mostrarEmpleados(empleados) {
+    console.log("Empleados :");
+    empleados.forEach(empleado => {
+        console.log(`ID: ${empleado.id}, Nombre: ${empleado.nombre}, Edad: ${empleado.edad}, Sexo: ${empleado.sexo}, Puesto: ${empleado.puesto}`);
+    });
 }
 
 /*Crear una función para buscar un empleado por el número de documento.
@@ -85,3 +95,8 @@ function removeEmpleado (empleados,idEmplRmv){
         console.log(`Empleado con ID ${idEmplRmv} eliminado.`);
     }   
 }
+
+
+/*MAIN*/
+cargarDatos(empleado,dataEmpleados);
+mostrarEmpleados(empleado);
