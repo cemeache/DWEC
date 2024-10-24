@@ -58,6 +58,11 @@ console.log(empleado);
 Implementar una función que nos permita buscar un empleado por su número de
 documento dentro del array y nos devuelva toda la información asociada a este.*/
 
-function buscarId (){
-    
+function buscarId (empleados, idBuscar){
+    for(i=0;i<empleados.length;i++)
+        if(empleados[i].id === idBuscar)
+            return empleados[i];
+    return false;
 }
+
+/*Crear una función que nos permita agregar a un empleado nuevo al registro (array).*/
