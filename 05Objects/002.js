@@ -32,12 +32,14 @@ let dataEmpleados = `12345,Javier Arias Carroza,45,Masculino,Gerente
 11234,Maria Vidigal Barroso,30,Femenino,Contadora`;
 
 let personas = dataEmpleados.split('\n');
+/*console.log(personas);*/
 
 let datosPersona = new Array();
 
 for(i=0;i < personas.length;i++)
     datosPersona[i] = personas[i].split(',');
 
+/*console.log(datosPersona);*/
 
 for(i=0;i<datosPersona.length;i++){
     let datosEmpleado = {
@@ -49,6 +51,8 @@ for(i=0;i<datosPersona.length;i++){
     };
     empleado.push(datosEmpleado);
 }
+
+console.log(empleado);
 
 /*Crear una función para buscar un empleado por el número de documento.
 Implementar una función que nos permita buscar un empleado por su número de
@@ -85,3 +89,14 @@ function removeEmpleado (empleados,idEmplRmv){
         console.log(`Empleado con ID ${idEmplRmv} eliminado.`);
     }   
 }
+
+
+/*Segunda parte (carga de datos directamente del fichero .txt)
+Para cargar el fichero de texto y realizar la simulación de la carga de un archivo externo
+(bien sea .txt o .json), utilizaremos la función fetch, la cual nos permite realizar solicitudes
+HTTP y obtener datos de un recurso externo. En una aplicación real, este archivo podría
+estar alojado en un servidor.
+
+Comprobar mediante los ejercicios de la parte 1 que la carga con fetch se realiza
+correctamente.*/
+
