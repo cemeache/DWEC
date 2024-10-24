@@ -17,7 +17,7 @@ function cargarDatosFetch() {
         })
         .then(data => {
             // Convertimos los datos a objetos
-            cargarDatos(empleado, data);
+            let empleado = cargarDatos(data);
 
             // Mostrar los empleados cargados
             mostrarEmpleados(empleado);
@@ -28,16 +28,15 @@ function cargarDatosFetch() {
         });
 }
 
-/* Array con los datos de empleados */
-let empleado = [];
-
 /* Funcion para cargar datos */
-function cargarDatos(empleado, dataEmpleados) {
+function cargarDatos(dataEmpleados) {
     let personas = dataEmpleados.split('\n');
     let datosPersona = new Array();
 
     for (let i = 0; i < personas.length; i++)
         datosPersona[i] = personas[i].split(',');
+
+    let empleado = [];
 
     for (let i = 0; i < datosPersona.length; i++) {
         let datosEmpleado = {
@@ -49,6 +48,8 @@ function cargarDatos(empleado, dataEmpleados) {
         };
         empleado.push(datosEmpleado);
     }
+
+    return empleado;
 }
 
 /* Mostrar datos */
@@ -96,4 +97,4 @@ function removeEmpleado(empleados, idEmplRmv) {
 }
 
 /* MAIN */
-cargarDatosFetch();
+cargarDatosFetch(); 
