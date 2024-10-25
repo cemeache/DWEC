@@ -1,13 +1,26 @@
-<!-- 1. (Evento onLoad). Confeccionar una página que muestre un mensaje con
-la función alert inmediatamente después que se cargue. -->
+<!-- 8. (Eventos: mousedown y mouseup). Elaborar un programa que muestre un
+div de color rojo. Cuando se presione cambiar el color a amarillo y
+luego de soltar el botón del mouse volver a pintar de rojo. -->
 
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Alert</title>
+        <title>onmousedown || onmouseup</title>
+        <style>
+            #backgroundColor{
+                background-color: red;
+                width: 100%;
+                height: 20vh;
+            }
+        </style>
     </head>
     <body>
-        
+        <div id="backgroundColor" onmousedown="pintar(yellow)" onmouseup="pintar(red)"></div>
+        <script>
+            function pintar(color){
+                document.getElementById("backgroundColor").style.backgroundColor = color;
+            }
+        </script>
     </body>
 </html>
