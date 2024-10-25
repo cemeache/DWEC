@@ -1,0 +1,26 @@
+<!-- 9. (Eventos: mouseover y mouseout). Mostrar un elemento de tipo H1, luego
+cuando se introduzca con el mouse dentro del mismo cambiar el color
+a letra roja y color de fondo amarillo, luego cuando se mueva la flecha
+del mouse fuera del elemento volver al color original.-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>onmouseover ||  onmouseout</title>
+    </head>
+    <body>
+        <h1 id="text" onmouseover="cambiarColor()" onmouseout="reset()">Hola</h1>
+        <script>
+            function cambiarColor(){
+                document.getElementById('text').style.backgroundColor = yellow;
+                document.getElementById('text').style.color = red;
+            }
+
+            function reset(){
+                document.getElementById('text').style.backgroundColor = white;
+                document.getElementById('text').style.color = black;
+            }
+        </script>
+    </body>
+</html>
