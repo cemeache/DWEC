@@ -122,9 +122,8 @@ totalGoles();
 
 function ordenarAsistencia(){
     futbolistas.sort((a,b) => function(){
-        a.asistencias - b.asistencias
-    })
-    futbolistas.sort
+        b.asistencias - a.asistencias
+    });
     console.log(futbolistas);
 }
 
