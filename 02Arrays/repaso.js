@@ -117,3 +117,15 @@ function totalGoles(){
 }
 
 totalGoles();
+
+/*--- ACT 3 - Ordenar los jugadores por asistencias (de mayor a menor) ---*/
+
+function ordenarAsistencia(){
+    futbolistas.sort((a,b) => function(){
+        a.asistencias - b.asistencias
+    })
+    futbolistas.sort
+    console.log(futbolistas);
+}
+
+ordenarAsistencia();
