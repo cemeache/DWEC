@@ -101,7 +101,8 @@ function filtrarGoles(){
     for(let i = 0; i<futbolistas.length;i++){
         if(futbolistas[i].goles > 20)
             console.log(futbolistas[i]);
-    }    
+    } 
+    console.log("-----------------------------------------------------------------------");   
 }
 
 filtrarGoles();
@@ -114,6 +115,7 @@ function totalGoles(){
         tg += futbolistas[i].goles;
     }    
     console.log(tg);
+    console.log("-----------------------------------------------------------------------"); 
 }
 
 totalGoles();
@@ -123,6 +125,7 @@ totalGoles();
 function ordenarAsistencia(){
     futbolistas.sort((a, b) => b.asistencias - a.asistencias);
     console.log(futbolistas);
+    console.log("-----------------------------------------------------------------------"); 
 }
 
 ordenarAsistencia();
@@ -130,50 +133,23 @@ ordenarAsistencia();
 /*--- ACT 4 - Contar tarjetas rojas y amarillas por equipo ---*/
 
 function contarTarjetasEquipo(){
-    let rmRed = 0, rmYellow = 0;
-    let imRed = 0, imYellow = 0;
-    let lpRed = 0, lpYellow = 0;
-    let psgRed = 0, psgYellow = 0;
-    let mcRed = 0, mcYellow = 0;
-    let ahRed = 0, ahYellow = 0;
 
-    for(let i = 0;i<futbolistas.length;i++)
-        switch (futbolistas[i].equipo){
-            case "Real Madrid":
-                rmYellow += futbolistas[i].tarjetaAmarilla;
-                rmRed += futbolistas[i].tarjetaRoja;
-                break;
-            
-            case "Inter Miami":
-                imYellow += futbolistas[i].tarjetaAmarilla;
-                imRed += futbolistas[i].tarjetaRoja;
-                break;
-
-            case "Liverpool":
-                lpYellow += futbolistas[i].tarjetaAmarilla;
-                lpRed += futbolistas[i].tarjetaRoja;
-                break;
-
-            case "Paris Saint-Germain":
-                psgYellow += futbolistas[i].tarjetaAmarilla;
-                psgRed += futbolistas[i].tarjetaRoja;
-                break;
-
-            case "Manchester City":
-                mcYellow += futbolistas[i].tarjetaAmarilla;
-                mcRed += futbolistas[i].tarjetaRoja;
-                break;
-                
-            case "Al-Hilal":
-                ahYellow += futbolistas[i].tarjetaAmarilla;
-                ahRed += futbolistas[i].tarjetaRoja;
+    const tarjetas = {};
+    for(i=0;i<futbolistas.length;i++){
+        const equipo = futbolistas[i].equipo;
+        if(!tarjetas[equipo]){
+            tarjetas[equipo] = [0,0];
         }
-    console.log("Real Madrid - Amarillas: " + rmYellow + ", Rojas: " + rmRed);
-    console.log("Inter Miami - Amarillas: " + imYellow + ", Rojas: " + imRed);
-    console.log("Liverpool - Amarillas: " + lpYellow + ", Rojas: " + lpRed);
-    console.log("Paris Saint-Germain - Amarillas: " + psgYellow + ", Rojas: " + psgRed);
-    console.log("Manchester City - Amarillas: " + mcYellow + ", Rojas: " + mcRed);
-    console.log("Al-Hilal - Amarillas: " + ahYellow + ", Rojas: " + ahRed);
+        tarjetas[equipo][0] += futbolistas[i].tarjetaAmarilla;
+        tarjetas[equipo][1] += futbolistas[i].tarjetaRoja;
+    }
+
+    for (const equipo in tarjetas) {
+        const numTarj = tarjetas[equipo];
+        console.log(equipo + ' : ' + numTarj.join(', '));        
+    }
+
+    console.log("-----------------------------------------------------------------------"); 
 }
 
 contarTarjetasEquipo();
@@ -183,6 +159,7 @@ contarTarjetasEquipo();
 function promedioGoles(){
     for(let i = 0;i<futbolistas.length;i++)
         console.log(futbolistas[i].nombre + " => " + futbolistas[i].goles / futbolistas[i].partidosJugados);
+    console.log("-----------------------------------------------------------------------"); 
 }
 
 promedioGoles();
@@ -198,6 +175,7 @@ function jugadorMayorAsistencias() {
             jugador = futbolistas[i];
         }
     console.log(jugador);
+    console.log("-----------------------------------------------------------------------"); 
 }
 
 jugadorMayorAsistencias();
@@ -222,8 +200,7 @@ function listarJugadoresPorPosicion() {
         //Separa los elementos del array por ',' cuando hay varios jugadores en una posición
         console.log(posicion + ' : ' + nombres.join(', '));
     }
+    console.log("-----------------------------------------------------------------------"); 
 }
 
 listarJugadoresPorPosicion();
-
-
