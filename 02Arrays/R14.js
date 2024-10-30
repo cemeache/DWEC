@@ -72,11 +72,10 @@ addPropiedad();
  *  6. Listar todas las ciudades sin duplicar
  */
 function listarCiudades(){
-    let ciudades = {};
+    let ciudades = [];
     for (let i = 0; i < personas.length; i++)
-        if(!ciudades[personas[i].ciudad])
-            ciudades[personas[i].ciudad] = [];
-        ciudades[personas[i].ciudad].push(personas[i].nombre);
+        if(!ciudades.includes(personas[i].ciudad))
+            ciudades.push(personas[i].ciudad);
     console.log(ciudades);
 }
 listarCiudades();
