@@ -119,9 +119,11 @@ function golesVsRivales(){
 golesVsRivales();
 
 /**
- * ACT 4 - EXTRA: Calcular el promedio de tarjetas amarillas por jugador en sus partidos: Calcula el promedio de tarjetas amarillas recibidas en los partidos para cada jugador.
+ * ACT 4 - EXTRA: Calcular el promedio de tarjetas amarillas por jugador en sus partidos: Calcula el promedio de 
+ *  tarjetas amarillas recibidas en los partidos para cada jugador.
 */
 
 /**
- * ACT 5 - EXTRA: Contar los jugadores con al menos un gol en todos sus partidos: Filtra los jugadores que hayan anotado al menos un gol en cada uno de sus partidos.
+ * ACT 5 - EXTRA: Contar los jugadores con al menos un gol en todos sus partidos: Filtra los jugadores que hayan 
+ *  anotado al menos un gol en cada uno de sus partidos.
 */
