@@ -52,7 +52,7 @@ estudianteCalificacionMayor();
 
 /*  3.  Agrupar estudiantes según aprobados o suspensos   */
 function agruparAprobadoSuspenso(){
-    console.log("---------- Estudiante Aprobado Suspenso -----------");
+    console.log("---------- Estudiante Aprobado | Suspenso -----------");
 
     const calificacion = estudiantes.reduce((acumulador,estudiantes) => {
         if(estudiantes.calificacion >= 50)
