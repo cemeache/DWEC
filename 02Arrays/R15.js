@@ -37,17 +37,86 @@ const futbolistas = [
 ];
 
 /**
- * ACT 1 - EXTRA: Calcular el total de goles y asistencias de cada jugador: Usa map() y reduce() para calcular el total de goles y asistencias de cada jugador en sus partidos.
+ * ACT 1 - EXTRA: Calcular el total de goles y asistencias de cada jugador: 
+ *  Usa map() y reduce() para calcular el total de goles y asistencias de cada jugador en sus partidos.
 */
+function golesAsistenciasTotalesJugador(){
+    let estadisticas = {};
+    for (let i = 0; i < futbolistas.length; i++) {
+        const futbolista = futbolistas[i];
+        //Add if no exits
+        if(!estadisticas[futbolista.nombre]){
+            estadisticas[futbolista.nombre] = {
+                goles: 0,
+                asistencias: 0
+            };
+        }
+        //Acumular goles y asistencias del jugador
+        for (let j = 0; j < futbolista.partidosJugados.length; j++) {
+            estadisticas[futbolista.nombre].goles += futbolista.partidosJugados[j].goles;
+            estadisticas[futbolista.nombre].asistencias += futbolista.partidosJugados[j].asistencias;
+        }
+    }
+    console.log(estadisticas);
+}
 
+golesAsistenciasTotalesJugador();
 
 /**
- * ACT 2 - EXTRA: Filtrar jugadores con tarjetas rojas en algún partido: Encuentra a los jugadores que hayan recibido al menos una tarjeta roja en algún partido.
+ * ACT 2 - EXTRA: Filtrar jugadores con tarjetas rojas en algún partido: Encuentra a los jugadores que hayan 
+ *  recibido al menos una tarjeta roja en algún partido.
 */
+function jugadoresTarjetasRojas(){
+    let jugadoresRojos = {};
+    for (let i = 0; i < futbolistas.length; i++) {
+        const futbolista = futbolistas[i];
+
+        for (let j = 0; j < futbolista.partidosJugados.length; j++) {
+            if (futbolista.partidosJugados[j].tarjetaRoja === true)
+                if(!jugadoresRojos[futbolista.nombre])
+                    jugadoresRojos[futbolista.nombre] == true;
+        }
+    }
+    console.log(jugadoresRojos);
+}
+jugadoresTarjetasRojas();
+
+function jugadoresTarjetasRojas(){
+    let jugadoresRojos = [];
+    for (let i = 0; i < futbolistas.length; i++) {
+        const futbolista = futbolistas[i];
+
+        for (let j = 0; j < futbolista.partidosJugados.length; j++) {
+            if (futbolista.partidosJugados[j].tarjetaRoja === true)
+                if(!jugadoresRojos.includes(futbolista.nombre))
+                    jugadoresRojos.push(futbolista.nombre);
+        }
+    }
+    console.log(jugadoresRojos);
+}
+jugadoresTarjetasRojas();
 
 /**
- * ACT 3 - EXTRA: Listar los rivales en los que un jugador específico anotó: Pide el nombre de un jugador y, si existe en el array, devuelve una lista de los equipos rivales contra los que anotó.
+ * ACT 3 - EXTRA: Listar los rivales en los que un jugador específico anotó: Pide el nombre de un jugador y,
+ *   si existe en el array, devuelve una lista de los equipos rivales contra los que anotó.
 */
+function golesVsRivales(){
+    let listaJugadores = {};
+    for (let i = 0; i < futbolistas.length; i++) {
+        const futbolista = futbolistas[i];
+        
+        if(!listaJugadores[futbolista.nombre])
+            listaJugadores[futbolista.nombre] = {rival: []};
+
+        for (let j = 0; j < futbolista.partidosJugados.length; j++) {
+            if(futbolista.partidosJugados[j].goles > 0)
+                listaJugadores[futbolista.nombre].rival.push(futbolista.partidosJugados[j].rival);            
+        }
+    }
+
+    console.log(listaJugadores);
+}
+golesVsRivales();
 
 /**
  * ACT 4 - EXTRA: Calcular el promedio de tarjetas amarillas por jugador en sus partidos: Calcula el promedio de tarjetas amarillas recibidas en los partidos para cada jugador.
