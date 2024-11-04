@@ -122,6 +122,24 @@ golesVsRivales();
  * ACT 4 - EXTRA: Calcular el promedio de tarjetas amarillas por jugador en sus partidos: Calcula el promedio de 
  *  tarjetas amarillas recibidas en los partidos para cada jugador.
 */
+function promedioTarjetasAmarillasJugador(){
+    let jugadoresYellow = [];
+    for (let i = 0; i < futbolistas.length; i++) {
+        const futbolista = futbolistas[i];
+        for (let j = 0; j < futbolista.partidosJugados.length; j++) {
+            if(!jugadoresYellow.includes(futbolista.nombre))
+                jugadoresYellow[futbolista.nombre] = 0;
+
+            if (futbolista.partidosJugados[j].tarjetaAmarilla === true) {
+                jugadoresYellow[futbolista.nombre] += 1;
+            }
+        }        
+        jugadoresYellow[futbolista.nombre] /= futbolista.partidosJugados.length;
+    }
+    console.log(jugadoresYellow);
+}
+
+promedioTarjetasAmarillasJugador();
 
 /**
  * ACT 5 - EXTRA: Contar los jugadores con al menos un gol en todos sus partidos: Filtra los jugadores que hayan 
