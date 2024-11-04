@@ -123,18 +123,18 @@ golesVsRivales();
  *  tarjetas amarillas recibidas en los partidos para cada jugador.
 */
 function promedioTarjetasAmarillasJugador(){
-    let jugadoresYellow = [];
+    let jugadoresYellow = {};
     for (let i = 0; i < futbolistas.length; i++) {
         const futbolista = futbolistas[i];
-        for (let j = 0; j < futbolista.partidosJugados.length; j++) {
-            if(!jugadoresYellow.includes(futbolista.nombre))
-                jugadoresYellow[futbolista.nombre] = 0;
+        let tarjetasAmarillas = 0;
+        let partidosJugados = futbolista.partidosJugados.length;
 
+        for (let j = 0; j < partidosJugados; j++) {
             if (futbolista.partidosJugados[j].tarjetaAmarilla === true) {
-                jugadoresYellow[futbolista.nombre] += 1;
+                tarjetasAmarillas++;
             }
         }        
-        jugadoresYellow[futbolista.nombre] /= futbolista.partidosJugados.length;
+        jugadoresYellow[futbolista.nombre] = tarjetasAmarillas / partidosJugados;
     }
     console.log(jugadoresYellow);
 }
