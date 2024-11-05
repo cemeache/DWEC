@@ -145,3 +145,18 @@ promedioTarjetasAmarillasJugador();
  * ACT 5 - EXTRA: Contar los jugadores con al menos un gol en todos sus partidos: Filtra los jugadores que hayan 
  *  anotado al menos un gol en cada uno de sus partidos.
 */
+
+function jugadoresPichichis(){
+    let goleadores = [];
+    for (let i = 0; i < futbolistas.length; i++) {
+        const futbolista = futbolistas[i];
+        for (let j = 0; j < futbolista.partidosJugados.length; j++) {
+            if(futbolista.partidosJugados[j].goles > 0)
+                if(!goleadores.includes(futbolista.nombre))
+                    goleadores.push(futbolista.nombre);
+        }
+    }
+    console.log(goleadores);
+}
+
+jugadoresPichichis();
