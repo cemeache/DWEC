@@ -19,6 +19,26 @@ b) La suma total de los saldos acreedores. -->
         <title>Ejercicio 9</title>
     </head>
     <body>
+        <script>
+            let banco = [];
+            numCuent = prompt("Ingrese el numCuenta: ");
+            while (numCuent > 0) {
+                let cuenta = {
+                    numCnt: numCuent,
+                    nombre: prompt("Nombre del Titular: "),
+                    saldo: prompt("Saldo Inicial: ")
+                };
+                if(cuenta.saldo > 0)
+                    banco[acreedor] = (cuenta);
+                else
+                    if(cuenta.saldo < 0)
+                        banco[deudor] = (cuenta);
+                    else
+                        banco[nulo] = (cuenta);
+                numCuent = prompt("Ingrese el numCuenta: ");
+            }
 
+            console.log(banco);
+        </script>
     </body>
 </html>
