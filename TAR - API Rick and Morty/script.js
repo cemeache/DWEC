@@ -1,4 +1,5 @@
-fetch('https://rickandmortyapi.com/api/character') // Ruta Archivo
+function recapInfo(){
+  fetch('https://rickandmortyapi.com/api/character') // Ruta Archivo
         .then(response => {
             if (!response.ok)
                 throw new Error('Error al cargar el archivo');
@@ -9,7 +10,8 @@ fetch('https://rickandmortyapi.com/api/character') // Ruta Archivo
         })
         .catch(error => {
             console.log('Error:', error);
-        });
+        });  
+}
 
 function mostrarPersonaje(data) {
     const contenedor = document.getElementById('contenedor-imagenes');
