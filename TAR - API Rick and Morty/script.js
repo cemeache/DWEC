@@ -15,8 +15,9 @@ function mostrarPersonaje(data) {
     const contenedor = document.getElementById('contenedor-imagenes');
     for (let i = 0; i < data.results.length; i++) {
         const personaje = data.results[i];
-        const img = document.createElement('img').style.width = "20%";
+        const img = document.createElement('img');
         img.src = personaje.image;
+        img.style.width = '20%';
         contenedor.appendChild(img);
     }
 }
