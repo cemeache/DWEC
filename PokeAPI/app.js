@@ -7,13 +7,22 @@
  * 
 */
 
+//https://pokeapi.co/api/v2/pokemon/rattata -> Accedes al pokemon rattata
+
 async function buscarPokemon(){
-    /**
-     * Tu código aquí.
-     */
-
-
-
+    pokemon = document.getElementById("pokemon-input");
+    fetch("https://pokeapi.co/api/v2/pokemon/"+pokemon)
+        .then(response => {
+            if(!response.ok)
+                throw new Error("No se cargó el archivo");
+            return response.json();
+        })
+        .then(data => {
+            console.log(data.abilities);
+        })
+        .catch(error => {
+            console.log('Error:', error);
+        })
 }
 
 /**
