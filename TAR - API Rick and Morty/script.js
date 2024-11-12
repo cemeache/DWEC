@@ -5,25 +5,18 @@ fetch('https://rickandmortyapi.com/api/character') // Ruta Archivo
             return response.json(); // Leemos archivo como json
         })
         .then(data => {
-            mostrarPersonajes(data);
+            mostrarPersonaje(data);
         })
         .catch(error => {
             console.log('Error:', error);
         });
 
-function mostrarPersonajes(data){
-    console.log(data.results);
-    for (let i = 0; i < data.length; i++) {
-        const personajes = data.results;
-        console.log(personajes);
-        for (let j = 0; j < personajes.length; j++) {
-            const personaje = personajes[j].episode;
-            console.log(personaje);
-            for (let x = 0; x < personaje.length; x++) {
-                const img = personaje[x];
-                document.createElement('<img src="' + img[x] + '>"');
-                console.log(img);
-            }
-        }
+function mostrarPersonaje(data) {
+    const contenedor = document.getElementById('contenedor-imagenes');
+    for (let i = 0; i < data.results.length; i++) {
+        const personaje = data.results[i];
+        const img = document.createElement('img').style.width = "20%";
+        img.src = personaje.image;
+        contenedor.appendChild(img);
     }
 }
