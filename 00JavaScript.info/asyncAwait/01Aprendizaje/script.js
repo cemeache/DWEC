@@ -10,4 +10,4 @@ async function verAvatar() {
     console.log(response);
 }
 
-verAvatar();
+//verAvatar();
