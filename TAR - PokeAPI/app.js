@@ -11,37 +11,62 @@
 
 async function buscarPokemon(){
     pokemonBsc = document.getElementById("pokemon-input").value;
+
     //console.log(`https://pokeapi.co/api/v2/pokemon/${pokemonBsc}`);
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonBsc}`);
     const pokemon = await response.json();
     
-    //console.log(pokemon);
-    
     const contenedor = document.getElementById("pokemon-data");
-
+    
+    let name = document.createElement('h4');
+    name.innerText = "Nombre: " + pokemon.name;
+    contenedor.appendChild(name);
+    
     let id = document.createElement('p');
     id.innerText = "ID: " + pokemon.id;
     contenedor.appendChild(id);
 
-    let name = document.createElement('p');
-    name.innerText = "Nombre: " + pokemon.name;
-    contenedor.appendChild(name);
+    let img = document.createElement('img');
+    img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`;
+    contenedor.appendChild(img);
 
-    
-    console.log(pokemon.sprites);
-
-    for (let i = 0; i < pokemon.sprites.length; i++) {
-        const sprite = pokemon.sprites[i];
-        console.log(sprite);
-        let img = document.createElement('img');
-        img.src = sprite;
-        contenedor.appendChild(img);
-    }
 }
+
+async function buscarPokemonVol2(){
+    pokemonBsc = document.getElementById("pokemon-input").value;
+    
+    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonBsc}`)
+    .then(response => {
+        if(!response.ok)
+            throw new Error("Pokemon no encontrado");
+        return response.json();
+    })
+    .then(data => {
+        const contenedor = document.getElementById("pokemon-data");
+    
+        let name = document.createElement('h4');
+        name.innerText = "Nombre: " + data.name;
+        contenedor.appendChild(name);
+        
+        let id = document.createElement('p');
+        id.innerText = "ID: " + data.id;
+        contenedor.appendChild(id);
+
+        let img = document.createElement('img');
+        img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`;
+        contenedor.appendChild(img);
+    })
+    .catch(error => {
+        console.log("Error: ", error)
+    });
+
+}
+
+
 /**
  *  Descomentar para hacer uso de la función.
  */
-//document.getElementById('search-btn').addEventListener('click',buscarPokemon);
+document.getElementById('search-btn').addEventListener('click',buscarPokemon);
 
 
 /**
