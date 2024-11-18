@@ -12,24 +12,31 @@
 async function buscarPokemon(){
     pokemonBsc = document.getElementById("pokemon-input").value;
 
+    try {
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonBsc}`);
+
+        if(!response.ok)
+            throw new Error("Pokemon no encontrado");
+        
+        const pokemon = await response.json();
+        
+        const contenedor = document.getElementById("pokemon-data");
+        
+        let name = document.createElement('h4');
+        name.innerText = "Nombre: " + pokemon.name;
+        contenedor.appendChild(name);
+        
+        let id = document.createElement('p');
+        id.innerText = "ID: " + pokemon.id;
+        contenedor.appendChild(id);
+
+        let img = document.createElement('img');
+        img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`;
+        contenedor.appendChild(img);
+    } catch (error) {
+        alert(error);
+    }
     //console.log(`https://pokeapi.co/api/v2/pokemon/${pokemonBsc}`);
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonBsc}`);
-    const pokemon = await response.json();
-    
-    const contenedor = document.getElementById("pokemon-data");
-    
-    let name = document.createElement('h4');
-    name.innerText = "Nombre: " + pokemon.name;
-    contenedor.appendChild(name);
-    
-    let id = document.createElement('p');
-    id.innerText = "ID: " + pokemon.id;
-    contenedor.appendChild(id);
-
-    let img = document.createElement('img');
-    img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`;
-    contenedor.appendChild(img);
-
 }
 
 async function buscarPokemonVol2(){
