@@ -9,6 +9,7 @@
 
 //https://pokeapi.co/api/v2/pokemon/rattata -> Accedes al pokemon rattata
 
+/*---------- EJER1 ----------*/
 async function buscarPokemon(){
     pokemonBsc = document.getElementById("pokemon-input").value;
 
@@ -38,6 +39,7 @@ async function buscarPokemon(){
     }
 }
 
+/*---------- EJER2 ----------*/
 async function buscarPokemonVol2(){
     pokemonBsc = document.getElementById("pokemon-input").value;
     
@@ -81,6 +83,7 @@ async function buscarPokemonVol2(){
 
 function buscarPokemonJQueryAJAX(){
     pokemonBsc = $('#pokemon-input').val();  //pokemonBsc = document.getElementById("pokemon-input").value;
+    coleccion = [];
 
     $.ajax({
         url: `https://pokeapi.co/api/v2/pokemon/${pokemonBsc}`,
@@ -99,11 +102,27 @@ function buscarPokemonJQueryAJAX(){
 
             const img = $('<img>').attr('src', `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`);
             contenedor.append(img);
+
+            const addColec = $('<button>').text("Agregar a la colección");
+            addColec.attr('id','agregar-collection');
+
+            contenedor.append(addColec);
+
+            addColec.addEventListener('click', agregarColeccion(coleccion,pokemon));
+
         },
         error: function(){
             alert("Pokemon no encontrado");
         }
     })
+}
+
+function agregarColeccion(coleccion,pokemon){
+    coleccion.push({
+        nombre: pokemon.name,
+        sprite: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`
+    });
+    console.log('coleccion');
 }
 
 /**
@@ -113,3 +132,9 @@ function buscarPokemonJQueryAJAX(){
 $(document).ready(function(){
     $('#search-btn').on('click', buscarPokemonJQueryAJAX);
 }); 
+
+
+/**
+ * Ejercicio 4: Crear una lista de Pokémon capturados
+ */
+
