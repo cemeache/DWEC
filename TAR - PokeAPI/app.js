@@ -102,14 +102,53 @@ function buscarPokemonJQueryAJAX(){
 
             const img = $('<img>').attr('src', `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`);
             contenedor.append(img);
+        },
+        error: function(){
+            alert("Pokemon no encontrado");
+        }
+    })
+}
+
+/**
+ * Haciendo uso de JQuery, descomentar para usar la función buscarPokemonJQueryAJAX
+*/
+
+/*$(document).ready(function(){
+    $('#search-btn').on('click', buscarPokemonJQueryAJAX);
+}); */
+
+
+/**
+ * Ejercicio 4: Crear una lista de Pokémon capturados
+ */
+
+function buscarPokemonJQueryAJAXEjer4(){
+    pokemonBsc = $('#pokemon-input').val();  //pokemonBsc = document.getElementById("pokemon-input").value;
+    coleccion = [];
+
+    $.ajax({
+        url: `https://pokeapi.co/api/v2/pokemon/${pokemonBsc}`,
+        method: 'GET',
+        success: function(pokemon){
+            const contenedor = $('#pokemon-data');
+            
+            //Borrar contenido #pokemon-data
+            contenedor.empty(); 
+            
+            const name = $('<h4>').text("Nombre: " + pokemon.name);
+            contenedor.append(name);
+
+            const id = $('<p>').text("ID: " + pokemon.id);
+            contenedor.append(id);
+
+            const img = $('<img>').attr('src', `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`);
+            contenedor.append(img);
 
             const addColec = $('<button>').text("Agregar a la colección");
             addColec.attr('id','agregar-collection');
-
-            contenedor.append(addColec);
-
-            addColec.addEventListener('click', agregarColeccion(coleccion,pokemon));
-
+            contenedor.append(addColec);   
+            
+            $(document).on('click','agregar-collection',agregarColeccion(coleccion,pokemon));
         },
         error: function(){
             alert("Pokemon no encontrado");
@@ -125,16 +164,6 @@ function agregarColeccion(coleccion,pokemon){
     console.log('coleccion');
 }
 
-/**
- * Haciendo uso de JQuery, descomentar para usar la función buscarPokemonJQueryAJAX
-*/
-
 $(document).ready(function(){
-    $('#search-btn').on('click', buscarPokemonJQueryAJAX);
-}); 
-
-
-/**
- * Ejercicio 4: Crear una lista de Pokémon capturados
- */
-
+    $('#search-btn').on('click', buscarPokemonJQueryAJAXEjer4);
+});

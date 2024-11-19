@@ -116,6 +116,11 @@ body::before {
   text-align: center;
 }
 
+#agregar-collection{
+  display: block;
+  margin: 0 auto;
+}
+
 #view-collection-btn:hover {
   background-color: #ff6347;
 }
