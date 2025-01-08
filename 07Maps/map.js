@@ -1,4 +1,4 @@
-const map = new Map();                                        // Map({}) (Mapa vacío)
+const map = new Map();                                         // Map({}) (Mapa vacío)
 const map1 = new Map([[1, "uno"]]);                            // Map({ 1=>"uno" })
 const map2 = new Map([[1, "uno"], [2, "dos"], [3, "tres"]]);   // Map({ 1=>"uno", 2=>"dos", 3=>"tres" })
 
